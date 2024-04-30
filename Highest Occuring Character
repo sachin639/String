@@ -1,0 +1,38 @@
+Problem statement
+For a given a string(str), find and return the highest occurring character.
+
+Example:
+Input String: "abcdeapapqarr"
+Expected Output: 'a'
+Since 'a' has appeared four times in the string which happens to be the highest frequency character, the answer would be 'a'.
+If there are two characters in the input string with the same frequency, return the character which comes first.
+
+Consider:
+Assume all the characters in the given string to be in lowercase always.
+
+
+
+
+public class Solution {
+
+	public static char highestOccuringChar(String str) {
+		//Your code goes here
+		int max=0;
+		int temp =0;
+		int [] arr = new int[256];
+		for(int i=0;i<str.length();i++){
+			arr[str.charAt(i)]++;
+	
+		}
+		for(int i=0;i<arr.length;i++){
+			if(arr[i]>max){
+				max=arr[i];
+				temp=i;
+			}
+		}
+		char c=(char)temp;
+		return c;
+		
+	}
+
+}
